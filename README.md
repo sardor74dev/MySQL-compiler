@@ -1,0 +1,1 @@
+This MySQL compiler built on Express.js, EJS and MySQL. In this compiler you can work with MySQL, more precisely you can create your own databases, tables and modify them as you want. The Guide and algorithms about how to implement that, i will share later.
