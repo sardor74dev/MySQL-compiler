@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./included/head.ejs', { title: 'Signup' }) %>
+<body class="body">
+    <div class="wrapper">
+        <main class="main">
+            <div class="main_container">
+                <div class="main_start">
+                    <div class="main_start_form">
+                        <img width="150" src="/img/output-onlinepngtools.png"/>
+                        <form action="/signup/step-2" method="POST">
+                            <div class="main_start_form_item">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" placeholder="Enter username" class="validate" id="username">
+                            </div>
+                            <div class="main_start_form_item">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" placeholder="Enter email" class="validate" id="email">
+                                <h5 id="invalidEmail">Please enter a valid email address</h5>
+                            </div>
+                            <div class="main_start_form_item">
+                                <label for="password">Password</label>
+                                <input oninput="checkPasswordStrength(this.value)" type="password" name="password" placeholder="Enter password" id="password" class="validate">
+                            </div>
+                            <div class="main_start_form_row">
+                                <h5 id="invalidPassword">Please enter a valid password</h5>
+                                <h5 id="strength-title"></h5><h5 id="password-strength-meter"></h5>
+                            </div>
+                            <div class="main_start_form_row_item">
+                                <input onclick="showPassword('password')" type="checkbox" id="show-password">
+                                <label for="show-password">Show Password</label>
+                            </div>
+                            <button class="main_start_form_button" type="submit">
+                                SIGN UP
+                            </button>
+                            <a href="/signup">
+                                <button class="main_start_form_button">
+                                    PREVIOUS
+                                </button>
+                            </a>
+                            <h5>Already have an account? <a href="/login">SIGN IN</a></h5>
+                            <div class="main_start_form_row_centered">
+                                <span class="step active"></span>
+                                <span class="step active"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

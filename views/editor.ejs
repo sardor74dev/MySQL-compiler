@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./included/head.ejs', { title: 'Editor' }) %>
+<body>
+  <div class="wrapper">
+    <%- include('./included/header.ejs') %>
+    <main class="main">
+      <div class="main_container">
+        <form method="get" action="/mysql-editor/results">
+          <div class="main_form">
+            <div class="main_form_buttons">
+              <div id="copiedMessage" class="main_form_copy">
+                <h4>Copied to clipboard!</h4>
+                <button onclick="closingMessage()" id="closeButton">
+                  <i class="fa-solid fa-xmark" style="color: #00758f;"></i>
+                </button>
+              </div>
+              <button onclick="copying()" type="button" id="toClipboard">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #00758f;"></i>
+              </button>
+              <button id="runQuery" type="submit">
+                <i class="fa-solid fa-play fa-lg" style="color: #00758f;"></i>
+              </button>
+            </div>
+          </div>
+          <textarea id="textArea" type="text" name="search_query" placeholder="SELECT * FROM departments;"><%= search_query %></textarea>
+        </form>
+        <div class="tab">
+          <% if (tabStatus === 'Output'){ %>
+            <button class="tablinks active" onclick="openTab(event, 'Output')">Output</button>
+            <button id="errBtn" class="tablinks" onclick="openTab(event, 'Errors')">Errors</button>
+          <% } else if(tabStatus === 'Errors') { %> 
+            <button class="tablinks" onclick="openTab(event, 'Output')">Output</button>
+            <button id="errBtn" class="tablinks active" onclick="openTab(event, 'Errors')">Errors</button>
+          <% } %>
+        </div>
+      </div>
+      <div class="main_container_2">
+        <% if(!errorStatus) { %>
+        <div id="Output" class="tabcontent" style="display: flex;">
+          <p id="output">
+            <table>
+              <thead>
+                <tr>
+                  <% columnNames.forEach(columnName => { %>
+                    <th><%= columnName %></th>
+                  <% }) %>
+                </tr>
+              </thead>
+              <tbody>
+                <% elements.forEach(element => { %>
+                  <tr>
+                    <% columnNames.forEach(columnName => { %>
+                      <td><%= element[columnName] %></td>
+                    <% }) %>
+                  </tr>
+                <% }) %>
+              </tbody>
+            </table>  
+          </p>
+        </div>
+        <% } else { %>
+        <div id="Errors" class="tabcontent">
+          <h5>
+            <%= error %>
+          </h5> 
+        </div>
+        <% } %>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

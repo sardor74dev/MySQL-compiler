@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<%- include('./included/head.ejs', { title: 'Home' }) %>
+<body>
+  <div class="wrapper">
+    <%- include('./included/header.ejs') %>
+    <main class="main">
+      <div class="main_container">
+        <div class="main_content">
+          <div class="main_content_title">
+            <h1>Welcome to the MySQL Made Simple!</h1>
+          </div>
+          <div class="main_content_text">
+            <h3>
+              If you're new to SQL, we recommend starting with our SQL Tutorial by clicking on the GET STARTED button.
+            </h3>
+          </div>
+          <div class="main_content_buttons">
+            <a href="/mysql-tutorial">
+              <button class="main_content_button">
+                GET STARTED
+              </button>
+            </a>
+            <a href="/mysql-editor">
+              <button class="main_content_button">
+                SQL EDITOR
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

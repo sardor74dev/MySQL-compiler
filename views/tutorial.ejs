@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./included/head.ejs', { title: 'Tutorial' }) %>
+<body>
+  <div class="wrapper">
+    <%- include('./included/header.ejs') %>
+      <main class="main">
+      <div class="main_container">
+        <div class="main_content_tutorial">
+          <div id="tutorialTitle" class="main_content_title">
+            <h1>About MySQL</h1>
+          </div>
+          <div class="main_content_text">
+            <h3>
+              MySQL is a open-source, free and very popular relational database management system which is developed, distributed and supported by Oracle corporation.
+            </h3>
+          </div>
+          <div class="main_content_text">
+            <h3>Key features:</h3>
+          </div>
+          <div class="main_content_text">
+              <ul class="main_content_text_2_list">
+                  <li>
+                    <p>Open-source relational database management systems.</p>
+                  </li>
+                  <li>
+                    <p>Reliable, very fast and easy to use database server.</p>
+                  </li>
+                  <li>
+                    <p>Works on client-server model.</p>
+                  </li>
+                  <li>
+                    <p>Highly Secure and Scalable</p>
+                  </li>
+                  <li>
+                    <p>High Performance</p>
+                  </li>
+                  <li>
+                    <p>High productivity as it uses stored procedures, triggers, views to write a highly productive code.</p>
+                  </li>
+                  <li>
+                    <p>Supports large databases efficiently.</p>
+                  </li>
+                  <li>
+                    <p>Supports many operating systems like Linux*,CentOS*, Solaris*,Ubuntu*,Windows*, MacOS*,FreeBSD* and others.</p>
+                  </li>
+              </ul>
+          </div>
+          <div class="main_content_title">
+              <h1>Syntax help</h1>
+          </div>
+          <div class="main_content_text">
+
+            <h2>Commands</h2>
+
+            <h3>1. CREATE</h3>
+                
+            <div class="pre">
+              <div id="area">
+                <h5>
+                  <code class="sql-keyword">CREATE TABLE</code> 
+                  table_name (column1 datatype, column2 datatype, ....);
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area')" id="copy">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>Example</h3>
+
+            <div class="pre">
+              <div id="area2">
+                <h5>
+                  <code class="sql-keyword">CREATE TABLE</code> 
+                  PATIENTS (full_name <code class="sql-datatype">VARCHAR(50) </code>
+                  <code class="sql-keyword">PRIMARY KEY,</code>
+                  gender <code class="sql-datatype">VARCHAR(6) </code>
+                  <code class="sql-keyword">NOT NULL,</code>
+                  city<code class="sql-datatype">VARCHAR(30)</code> 
+                  <code>NOT NULL</code>);
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area2')" id="copy2">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>2. ALTER</h3>
+
+            <div class="pre">
+              <div id="area3">
+                <h5>
+                  <code class="sql-keyword">ALTER TABLE</code> Table_name <code class="sql-keyword">ADD</code> column_name datatype;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area3')" id="copy3">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>Example</h3>
+
+            <div class="pre">
+              <div id="area4">
+                <h5>
+                  <code class="sql-keyword">INSERT INTO </code>PATIENTS <code class="sql-keyword">VALUES</code> (<code class="sql-number">1, </code> <code class="sql-string">'D.I.Johnson', </code><code class="sql-string">'male', </code><code class=sql-string>'London'</code>);
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area4')" id="copy4">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>3. TRUNCATE</h3>
+
+            <div class="pre">
+              <div id="area5">
+                <h5>
+                  <code class="sql-keyword">TRUNCATE table</code> table_name;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area5')" id="copy5">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>4. DROP</h3>
+
+            <div class="pre">
+              <div id="area6">
+                <h5>
+                  <code class="sql-keyword">DROP TABLE</code> table_name;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area6')" id="copy6">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+            
+            <h3>5. RENAME</h3>
+
+            <div class="pre">
+              <div id="area7">
+                <h5>
+                  <code class="sql-keyword">RENAME TABLE</code> table_name1 <code class="sql-keyword">to</code> new_table_name1;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area7')" id="copy7">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h2>DML Commands</h2>
+
+            <h3>1. INSERT</h3>
+                
+            <div class="pre">
+              <div id="area8">
+                <h5>
+                  <code class="sql-keyword">INSERT INTO</code> table_name (column1, column2, column3, ...) <code class="sql-keyword">VALUES</code> (value1, value2, value3, ...);
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area8')" id="copy8">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>Example</h3>
+
+            <div class="pre">
+              <div id="area9">
+                <h5>
+                  <code class="sql-keyword">INSERT INTO</code> PATIENTS <code class="sql-keyword">VALUES</code> (<code class="sql-number">1, </code> <code class="sql-string">'D.I.Johnson', </code> <code class="sql-string">'male', </code> <code class=sql-string>'London'</code>);
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area9')" id="copy9">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>2. SELECT</h3>
+
+            <div class="pre">
+              <div id="area10">
+                <h5>
+                  <code class="sql-keyword">SELECT</code> column1, column2, ... <code class="sql-keyword">FROM</code> table_name [<code class="sql-keyword">WHERE condition</code>];
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area10')" id="copy10">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>Example</h3>
+
+            <div class="pre">
+              <div id="area11">
+                <h5>
+                  <code class="sql-keyword">SELECT</code> * <code class="sql-keyword">FROM</code> DOCTORS <code class="sql-keyword">WHERE</code> position = <code class="sql-string">'Cardiologist'</code>;
+                </h5>
+              </div><div onclick="copyDivContent('area11')" id="copy11">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>3. UPDATE</h3>
+
+            <div class="pre">
+              <div id="area12">
+                <h5>
+                  <code class="sql-keyword">UPDATE</code> table_name <code class="sql-keyword">SET</code> column1 = value1 <code class="sql-keyword">WHERE condition</code>;
+                </h5>
+              </div><div onclick="copyDivContent('area12')" id="copy12">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>Example</h3>
+
+            <div class="pre">
+              <div id="area13">
+                <h5>
+                  <code class="sql-keyword">UPDATE</code> DOCTORS <code class="sql-keyword">SET</code> experience =<code class="sql-number"> 8</code><code class="sql-keyword"> WHERE </code>ID = <code class="sql-number">1</code>;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area13')" id="copy13">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>4. DELETE</h3>
+
+            <div class="pre">
+              <div id="area14">
+                <h5>
+                  <code class="sql-keyword">DELETE FROM </code>table_name<code> WHERE condition</code>;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area14')" id="copy14">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>Example</h3>
+
+            <div class="pre">
+              <div id="area15">
+                <h5>
+                  <code class="sql-keyword">DELETE FROM </code>DOCTORS<code class="sql-keyword"> WHERE </code>ID = <code class="sql-number">1</code>;
+                </h5>
+              </div><div onclick="copyDivContent('area15')" id="copy15">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h2>INDEXES</h2>
+
+            <h3>1. CREATE INDEX</h3>
+
+            <div class="pre">
+              <div id="area16">
+                <h5>  
+                  <code class="sql-keyword">CREATE </code>INDEX index_name<code> on </code>table_name(column_name);
+                </h5>
+              </div>'
+              <div onclick="copyDivContent('area16')" id="copy16">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <ul class="unique_index">
+              <li>To create unique index:</li>
+            </ul>
+
+            <div class="pre">
+              <div id="area17">
+                <h5>  
+                  <code class="sql-keyword">CREATE UNIQUE </code>INDEX index_name<code> on </code>table_name(column_name);
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area17')" id="copy17">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+            
+            <h3>2. DROP INDEX</h3>
+
+            <div class="pre">
+              <div id="area18">
+                <h5>  
+                  <code class="sql-keyword">DROP </code>INDEX index_name<code> on </code>table_name(column_name);
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area18')" id="copy18">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+          
+            <h2>Views</h2>
+
+            <h3>1. Create a view</h3>
+
+            <div class="pre">
+              <div id="area19">
+                <h5>
+                  <code class="sql-keyword">CREATE </code>VIEW view_name<code> AS </code>query;
+                </h5>
+              </div><div onclick="copyDivContent('area19')" id="copy19">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>2. How to call view</h3>
+
+            <div class="pre">
+              <div id="area20">
+                <h5>
+                  <code class="sql-keyword">SELECT * FROM </code> view_name;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area20')" id="copy20">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>3. Altering a view</h3>
+
+            <div class="pre">
+              <div id="area21">
+                <h5>
+                  <code class="sql-keyword">ALTER </code>VIEW view_name<code> AS </code>query;
+                </h5>
+              </div><div onclick="copyDivContent('area21')" id="copy21">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>4. Delete a view</h3>
+
+            <div class="pre">
+              <div id="area22">
+                <h5>
+                  <code class="sql-keyword">DROP </code>VIEW view_name;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area22')" id="copy22">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h2>Joins</h2>
+
+            <h3>1. INNER JOIN</h3>
+
+            <div class="pre">
+              <div id="area23">
+                <h5>
+                  <code class="sql-keyword">SELECT * FROM </code>TABLE1 <code class="sql-keyword">INNER JOIN </code>TABLE2 <code>where condition</code>;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area23')" id="copy23">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>2. LEFT JOIN</h3>
+
+            <div class="pre">
+              <div id="area23">
+                <h5>
+                  <code class="sql-keyword">SELECT * FROM </code>TABLE1 <code class="sql-keyword">LEFT JOIN </code>TABLE2 <code>ON condition</code>;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area23')" id="copy23">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>3. RIGHT JOIN</h3>
+
+            <div class="pre">
+              <div id="area23">
+                <h5>
+                  <code class="sql-keyword">SELECT * FROM </code>TABLE1 <code class="sql-keyword">RIGHT JOIN </code>TABLE2 <code>ON condition</code>;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area23')" id="copy23">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+            <h3>4. CROSS JOIN</h3>
+
+            <div class="pre">
+              <div id="area23">
+                <h5>
+                  <code class="sql-keyword">SELECT </code>select_list <code class="sql-keyword">FROM </code>TABLE1 <code class="sql-keyword">CROSS JOIN </code>TABLE2;
+                </h5>
+              </div>
+              <div onclick="copyDivContent('area23')" id="copy23">
+                <i class="fa-regular fa-clipboard fa-lg" style="color: #999999;"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

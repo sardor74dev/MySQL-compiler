@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./included/head.ejs', { title: 'Signup' }) %>
+<body class="body">
+    <div class="wrapper">
+        <main class="main">
+            <div class="main_form_container">
+                <div class="main_start" id="container">
+                    <div class="main_start_sign-in sign-in-container">
+                        <form action="/signin" method="POST">
+                            <h1>Sign in</h1>
+                            <div class="social-con">
+                                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            <h5>or use your account</h5>
+                            <div class="main_start_form-con">
+                                <input type="text" name="username" placeholder="Enter username" id="username" class="validate">
+                                <div>
+                                    <i class="fa-solid fa-user fa-sm"></i>
+                                </div>
+                            </div>
+                            <div class="main_start_form-con">
+                                <input type="password" name="password" placeholder="Enter password" id="signInPassword" class="validate">
+                                <div onclick="showPassword('signInPassword', 'signinEyeIcon', 'signinClosedEyeIcon')">
+                                    <i id="signinEyeIcon" class="fa-solid fa-eye fa-sm"></i>
+                                    <i id="signinClosedEyeIcon" class="fa-solid fa-eye-slash fa-sm"></i>
+                                </div>
+                            </div>
+                            <a href="/forgotten-password">Forgot your password?</a>
+                            <button class="main_start_form_button">Sign In</button>
+                        </form>
+                    </div>
+                    <div class="main_start_sign-up sign-up-container">
+                        <form action="/signup" method="POST">
+                            <h1>Create Account</h1>
+                            <div class="social-con">
+                                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            <h5>or use your email for registration</h5>
+                            <div class="main_start_form-con">
+                                <input type="text" name="username" placeholder="Enter username" id="signUpusername" class="validate">
+                                <div>
+                                    <i class="fa-solid fa-user fa-sm"></i>
+                                </div>
+                            </div>
+                            <div class="main_start_form-con">
+                                <input oninput="emailInp('signUpEmail')" type="email" name="email" placeholder="Enter email" id="signUpEmail" class="validate">
+                                <div>
+                                    <i class="fa-solid fa-envelope fa-sm"></i>
+                                </div>
+                            </div>
+                            <div class="main_start_form-con">
+                                <input oninput="checkPasswordStrength(this.value)" type="password" name="password" placeholder="Enter password" id="signUpPassword" class="validate">
+                                <div onclick="showPassword('signUpPassword', 'signupEyeIcon', 'signupClosedEyeIcon')">
+                                    <i id="signupEyeIcon" class="fa-solid fa-eye fa-sm"></i>
+                                    <i id="signupClosedEyeIcon" class="fa-solid fa-eye-slash fa-sm"></i>
+                                </div>
+                            </div>
+                            <div class="main_start_form_row">
+                                <h6 id="invalidPassword">Please enter a valid password</h6>
+                                <h6 id="strength-title"></h6><h6 id="password-strength-meter"></h6>
+                            </div>
+                            <button class="main_start_form_button" type="submit">Sign Up</button>
+                        </form>
+                    </div>
+                    <div class="main_start_overlay">
+                        <div class="overlay">
+                            <div class="overlay-panel overlay-left">
+                                <h1>Welcome Back!</h1>
+                                <p>To keep connected with us please login with your personal info</p>
+                                <button class="ghost" id="signIn">Sign In</button>
+                            </div>
+                            <div class="overlay-panel overlay-right">
+                                <h1>Hello, Friend!</h1>
+                                <p>Enter your personal details and start journey with us</p>
+                                <button class="ghost" id="signUp">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

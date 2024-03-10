@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./included/head.ejs', { title: 'Login' }) %>
+<body class="body">
+    <div class="wrapper">
+        <main class="main">
+            <div class="main_container">
+                <div class="main_start">
+                    <div class="main_start_form">
+                        <img width="150" src="/img/output-onlinepngtools.png"/>
+                        <form action="/login" method="POST">
+                            <div class="main_start_form_item">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" class="validate" placeholder="Enter username" id="loginUsername" required>
+                            </div>
+                            <div class="main_start_form_item">
+                                <label for="password">Password</label>
+                                <input oninput="checkPasswordStrength(this.value)" type="password" name="password" class="validate" placeholder="Enter password" id="password" required>
+                            </div>
+                            <div class="main_start_form_row">
+                                <h5 id="invalidPassword">Please enter a valid password</h5>
+                                <h5 id="strength-title"></h5><h5 id="password-strength-meter"></h5>
+                            </div>
+                            <div class="main_start_form_row">
+                                <div class="main_start_form_row_item">
+                                    <input onclick="showPassword('password')" type="checkbox" id="show-password">
+                                    <label for="show-password">Show Password</label>
+                                </div>
+                                <h5><a href="/forgotten-password">Forgot password?</a></h5>
+                            </div>
+                            <button class="main_start_form_button" type="submit" name="action">
+                                SIGN IN
+                            </button>
+                            <h5>Don't have an account? <a href="/">SIGN UP</a></h5>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
